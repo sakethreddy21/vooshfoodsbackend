@@ -110,13 +110,12 @@ export async function deleteUser(req: Request, res: Response) {
       }
   
       // Compare the provided password with the stored hashed password
-      const isMatch = await bcrypt.compare(password, user.password);
-  
-      // Check if the password matches
-      if (!isMatch) {
+      if (user.password) {
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (isMatch) {
         return res.status(401).json({ error: 'Invalid credentials' });
       }
-  
+    }
       // Create the payload for the JWT token
       const payload = {
         email: user.email,
