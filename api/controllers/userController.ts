@@ -121,7 +121,7 @@ export async function deleteUser(req: Request, res: Response) {
       const payload = {
         email: user.email,
         firstName: user.firstName,
-        lastName: user.lastName,
+        userID: user._id
       };
   
       // Generate the JWT token
