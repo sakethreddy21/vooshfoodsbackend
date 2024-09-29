@@ -53,7 +53,9 @@ router.get(
 	passport.authenticate("google", {
 		successRedirect: 'https://vooshfoodsbackend.vercel.app/auth/login/success',
 		failureRedirect: "/login/failed",
-	})
+	}),  (req: Request, res: Response) => {
+        res.json('djjdjdj');
+   }
 
 );
 
