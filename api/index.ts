@@ -7,8 +7,6 @@ dotenv.config();
 import userRoutes from "./routes/userDetails";
 import taskRoutes from './routes/taskRoutes'
 import { connectMongoDB } from '../lib/config'; // Adjust the path as needed
-import authRoute from '../api/routes/auth'
-import passport from '../lib/passport'
 
 connectMongoDB()
 
@@ -20,10 +18,6 @@ app.use(
         maxAge:24*64*60*100.
     })
 )
-app.use(passport.initialize())
-app.use(passport.session())
-
-app.use('/auth', authRoute)
 
 
 app.use(express.json());
