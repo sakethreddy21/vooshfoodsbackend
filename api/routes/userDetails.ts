@@ -13,7 +13,7 @@ router.delete('/:userId', deleteUser);
 router.put('/:userId', updateUser);
 
 // Get a user
-router.get('/login', getUser);
+router.post('/login', getUser);
 
 
 
