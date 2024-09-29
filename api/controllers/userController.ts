@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import bcrypt from 'bcrypt'
 import User from '../models/User'
 import jwt from 'jsonwebtoken'; // Import jsonwebtoken
-
+const JWT_SECRET = 'your_jwt_secret'; 
 export async function createUser(req: Request, res: Response) {  
 const { firstName, lastName, email, password, confirmPassword } = req.body;
 
@@ -90,7 +90,7 @@ export async function deleteUser(req: Request, res: Response) {
       res.status(500).json({ error: 'Server error' });
     }
   }
-  const JWT_SECRET = 'your_jwt_secret'; // Use a strong secret and store it securely
+  // Use a strong secret and store it securely
 
   export async function getUser(req: Request, res: Response) {
     const { email, password } = req.body;
@@ -128,6 +128,7 @@ export async function deleteUser(req: Request, res: Response) {
       
       res.status(200).json({ token });
     } catch (err) {
+      
       console.error(err); // Log the error for debugging
       res.status(500).json({ error: 'Server error' });
     }
