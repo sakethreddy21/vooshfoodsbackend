@@ -5,6 +5,8 @@ import jwt from 'jsonwebtoken'; // Import jsonwebtoken
 
 const passport = require("passport");
 const JWT_SECRET = 'your_jwt_secret';
+
+require('dotenv').config()
 router.get("/login/success", (req: any, res: Response) => {
 
     console.log(req.user)

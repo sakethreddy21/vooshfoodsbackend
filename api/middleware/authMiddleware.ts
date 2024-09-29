@@ -1,6 +1,6 @@
 const jwt= require('jsonwebtoken');
 import { request, response , NextFunction} from 'express'
-
+require('dotenv').config()
 export const authMiddleware = (req: typeof request, res: typeof response, next: NextFunction) => {
     const token = req.header('Authorization')?.replace('Bearer ', '');
 

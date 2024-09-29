@@ -1,6 +1,7 @@
 import User from '../api/models/User'
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const passport = require('passport')
+require('dotenv').config()
 
 
  passport.use(
@@ -39,4 +40,6 @@ passport.serializeUser((user:any,done:any)=>{
 passport.deserializeUser((user:any,done:any)=>{
     done(null,user);
 });
+
+
 export default passport
