@@ -28,7 +28,7 @@ router.get("/login/success", (req: any, res: Response) => {
             sessionStorage.setItem('token', token);
           } 
 
-          res.redirect(`http://localhost:3001?token=${token}`);
+          res.redirect(`https://vooshfoodstask.vercel.app?token=${token}`);
 
     
 
@@ -49,7 +49,7 @@ router.get("/google", passport.authenticate("google", ["profile", "email"]));
 router.get(
 	"/google/callback",
 	passport.authenticate("google", {
-		successRedirect: 'http://localhost:3000/auth/login/success',
+		successRedirect: 'https://vooshfoodsbackend.vercel.app/auth/login/success',
 		failureRedirect: "/login/failed",
 	})
 
