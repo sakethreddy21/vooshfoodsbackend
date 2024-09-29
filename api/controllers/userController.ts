@@ -126,8 +126,6 @@ export async function deleteUser(req: Request, res: Response) {
   
       // Generate the JWT token
       const token = jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' }); // Token expires in 1 hour
-  
-      // Return the token and user data (excluding password)
       
       res.status(200).json({ token });
     } catch (err) {
