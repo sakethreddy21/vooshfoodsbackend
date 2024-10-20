@@ -4,23 +4,26 @@ import {
   getTaskByID, 
   deleteTaskByID, 
   updateTaskByID ,
-  createTask
+  createTask,
+  calculateTCO
 } from '../controllers/taskController';
 
 const router = express.Router();
 
 // Route to get all tasks by userID
-router.get('/user/:userID', getTasksByUserID);
+//router.get('/user/:userID', getTasksByUserID);
 
-router.post('/', createTask)
+//router.post('/', createTask)
 
 // Route to get a single task by todoID
-router.get('/:todoID', getTaskByID);
+//router.get('/:todoID', getTaskByID);
+
+router.post('/calculate', calculateTCO)
 
 // Route to delete a task by todoID
-router.delete('/:todoID', deleteTaskByID);
+//router.delete('/:todoID', deleteTaskByID);
 
 // Route to update a task by todoID
-router.put('/:todoID', updateTaskByID);
+//router.put('/:todoID', updateTaskByID);
 
 export default router;

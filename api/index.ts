@@ -11,13 +11,6 @@ import { connectMongoDB } from '../lib/config'; // Adjust the path as needed
 connectMongoDB()
 
 app.use(cors())
-app.use(
-    cookieSession({
-        name:"session",
-        keys:['cyberwolve'],
-        maxAge:24*64*60*100.
-    })
-)
 
 
 app.use(express.json());
@@ -25,7 +18,7 @@ app.use(express.json());
 
 
 
-app.use('/users', userRoutes)
+//app.use('/users', userRoutes)
 app.use('/tasks', taskRoutes)
 app.get("/", (req:any, res:any) => res.json("Express on Vercel"));
 
